@@ -21,14 +21,14 @@ module.exports.run = async (bot, message, args) => {
     if (!ideeChannel) return message.guild.send("Kan geen channel vinden voor suggesties");
 
     // Verzend het bericht en voeg er reacties aan toe.
-    ideeChannel.send(ideeEmbed).then(message => {
-        message.react('👍').then(() => message.react('👎'));
+    ideeChannel.send(ideeEmbed).then(ideeEmbed => {
+        ideeEmbed.react('👍').then(() => message.react('👎'));
 
         const filter = (reaction, user) => {
             return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
         };
 
-        message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+        ideeEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
