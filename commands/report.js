@@ -4,13 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     let msg = args.join(" ");
 
-    let usageEmbed = new discord.MessageEmbed()
-    .setTitle(`Usage`)
-    .setColor('#1c1c1c')
-    .setDescription(`!report [bug/naam/klacht] [beschrijving]`)
-    .setFooter(`© SmD 2020`)
-
-    if(!msg) return message.channel.send(usageEmbed)
+    if(!msg) return message.channel.send(`Gebruik: !report [player-klacht-bug] [specifieke uitleg].`);
 
     else {
 
@@ -18,9 +12,9 @@ module.exports.run = async (bot, message, args) => {
 
         var serverIcon = message.guild.iconURL;
         let embed = new discord.MessageEmbed()
-        .setTitle(`Report`)
-        .setColor(`#1c1c1c`)
-        .setAvatar("http://www.cityofhinesville.org/ImageRepository/Document?documentID=2995")
+        .setTitle('Report')
+        .setColor('#1c1c1c')
+        .setImage(serverIcon)
         .addField(`Report van:`, message.author.username)
         .addField(`Bug of probleem:`, msg)
         .setFooter(`© SmD 2020`)
