@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
 
         let channel = message.guild.channels.cache.get("818609614353334323");
 
-        if (!channel) return message.channel.send(`There is no channel called logs, check the bot config to change the channel ID's`)
+        if (!channel) return message.channel.send(`There is no called logs, check the bot config to change the channel ID's`)
         channel.send(embed)
     }
 
