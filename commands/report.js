@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
         let embed = new discord.MessageEmbed()
         .setTitle('Report')
         .setColor('#1c1c1c')
-        .setThumbnail("http://www.cityofhinesville.org/ImageRepository/Document?documentID=2995")
+        .setThumbnail(serverIcon)
         .addField(`Report van:`, message.author.username)
         .addField(`Bug of probleem:`, msg)
         .setFooter(`© SmD 2020`)
