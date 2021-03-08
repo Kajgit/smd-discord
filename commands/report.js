@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     let msg = args.join(" ");
 
-    if(!msg) return message.channel.send(`Je moet een reden opgeven.`)
+    if(!msg) return message.channel.send(`You have to provide a reason.`)
 
     else {
 
@@ -14,16 +14,16 @@ module.exports.run = async (bot, message, args) => {
         let embed = new discord.MessageEmbed()
         .setTitle('Report')
         .setColor('#1c1c1c')
-        .setThumbnail(serverIcon)
-        .addField(`Report van:`, message.author.username)
-        .addField(`Bug of probleem:`, msg)
-        .setFooter(`© SmD 2020`)
+        .setThumbnail("http://www.cityofhinesville.org/ImageRepository/Document?documentID=2995")
+        .addField(`Report from:`, message.author.username)
+        .addField(`Containing bug or issue:`, msg)
+        .setFooter(`© Designity 2020`)
         .setTimestamp()
 
 
-        let chan = guild.channels.cache.get('818609614353334323')
+        let chan = message.guild.channels.cache.get('818609614353334323')
 
-        if (!chan) return message.channel.send(`Er is geen log channel.`)
+        if (!chan) return message.channel.send(`There is no channel called logs, check the bot config to change the channel ID's`)
         chan.send(embed)
     }
 
@@ -32,5 +32,5 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     cata: "muziek",
     name: "report",
-    description: "Report een speler/bug."
+    description: "Laat de bot leaven van het kanaal."
 }
