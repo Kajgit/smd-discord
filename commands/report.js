@@ -21,10 +21,10 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
 
 
-        let chan = message.guild.channels.cache.get('818609614353334323')
+        let channel = message.guild.channels.cache.get("818609614353334323");
 
-        if (!chan) return message.channel.send(`There is no channel called logs, check the bot config to change the channel ID's`)
-        chan.send(embed)
+        if (!channel) return message.channel.send(`There is no channel called logs, check the bot config to change the channel ID's`)
+        channel.send(embed)
     }
 
 }
