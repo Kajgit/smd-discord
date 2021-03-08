@@ -21,24 +21,12 @@ module.exports.run = async (bot, message, args) => {
     if (!ideeChannel) return message.guild.send("Kan geen channel vinden voor suggesties");
 
     // Verzend het bericht en voeg er reacties aan toe.
-    ideeChannel.send(ideeEmbed).then(async msg => {
-        var emoji = await promptMessage(msg, message.author, 30, ["👍", "👎"] );
-
-            if(emoji === "👍"){
-
-                msg.delete();
-
-                message.channel.send(ideeEmbed);
-
-            } else if(emoji === "👎"){
-
-                msg.delete();
-
-                return message.reply("Suggestie succesvol geweigerd!").then(m => m.delete(5000));
-
-            }
+    ideeChannel.send(ideeEmbed).then(embedMessage => {
+        embedMessage.react('👍');
+        embedMessage.react('👎');
     });
 
+    
 
     message.reply(`You successfully sent a suggestion! :white_check_mark:`);
 
