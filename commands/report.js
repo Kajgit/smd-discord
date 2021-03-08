@@ -6,8 +6,11 @@ module.exports.run = async (bot, message, args) => {
 
     let usageEmbed = new discord.MessageEmbed()
     .setTitle('Usage')
+    .setColor('#1c1c1c')
+    .setDescription('!report [bug/naam/klacht] [beschrijving]')
+    .setFooter(`© SmD 2020`)
 
-    if(!msg) return message.channel.send(`.`)
+    if(!msg) return message.channel.send(usageEmbed)
 
     else {
 
