@@ -2,22 +2,22 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: You don't have permission to do this.")
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Je hebt hier geen permissies voor.")
 
     var aantal = args[0];
 
-    if (!aantal) return message.channel.send(":x: Incorrect usage! !purge <amount of messages (max 100)>")
+    if (!aantal) return message.channel.send("Incorrect gebruik! !purge <aantal berichten (max 100)>")
 
     message.channel.messages.fetch({ limit: aantal })
         .then(messages => {
             message.channel.bulkDelete(messages);
-            message.channel.send(`Successfully cleared ${aantal}!`).then(message => {
+            message.channel.send(`Succesvol ${aantal} gecleared!`).then(message => {
                 setTimeout(() => {
                     message.delete()
                   }, 1000);
             })
         }).catch(error => {
-            return message.channel.send(`Something went wrong.`);
+            return message.channel.send(`Er is iets fout gegaan.`);
         })
 
 }
