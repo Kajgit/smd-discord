@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
     if (!ideeChannel) return message.guild.send("Kan geen channel vinden voor suggesties");
 
     // Verzend het bericht en voeg er reacties aan toe.
-    ideeChannel.send(ideeEmbed).then(embedMessage => {
+    ideeChannel.send(ideeEmbed).then(message => {
         message.react('👍').then(() => message.react('👎'));
 
         const filter = (reaction, user) => {
@@ -45,7 +45,7 @@ module.exports.run = async (bot, message, args) => {
 
     
 
-    message.reply(`You successfully sent a suggestion! :white_check_mark:`);
+    message.reply(`Je hebt succesvol een suggestie verstuurd! :white_check_mark:`);
 
 }
 
