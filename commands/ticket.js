@@ -4,9 +4,9 @@ module.exports.run = async (bot, message, args) => {
  
     var embedCreateTicket = new discord.MessageEmbed()
     .setColor('#e50000')
-        .setTitle("Hello, " + message.author.username)
-        .setDescription(`Support ticket has been made.`)
-        .setFooter("© Designity 2020");
+        .setTitle("Hey, " + message.author.username)
+        .setDescription(`Een support ticket is aangemaakt.`)
+        .setFooter("© SmD 2020");
  
     message.channel.send(embedCreateTicket);
  
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     type: 'text', 
     permissionOverwrites: [
             {
-             id: "698622362559447221", 
+             id: "807775107812032513", 
             allow: ['VIEW_CHANNEL'],
             },
             {
@@ -30,11 +30,11 @@ module.exports.run = async (bot, message, args) => {
             ]
     })
            .then(channel => {
-            channel.setParent(`701893798531432598`)
+            channel.setParent(`818627102084431873`)
 
             channel.overwritePermissions([
                 {
-                    id: "698622362559447221", 
+                    id: "807775107812032513", 
                     allow: ['VIEW_CHANNEL'],
                     },
                     {
@@ -48,10 +48,10 @@ module.exports.run = async (bot, message, args) => {
             ]);
     
             let embed = new discord.MessageEmbed()
-            .setTitle(`**New Ticket**`)
+            .setTitle(`**Nieuwe Ticket**`)
             .setColor(`#ff4530`)
-            .setDescription(`Hello, our staff team will help you further.`)
-            .setFooter(`© Designity 2020`)
+            .setDescription(`Hey, ons staffteam helpt je verder.`)
+            .setFooter(`© SmD 2020`)
     
             channel.send(embed)
     
