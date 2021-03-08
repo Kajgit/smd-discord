@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 
         var serverIcon = message.guild.iconURL;
         let embed = new discord.MessageEmbed()
-        .setTitle('Report')
+        .setTitle('Staff Report')
         .setColor('#1c1c1c')
         .setAvatar(serverIcon)
         .addField(`Report van:`, message.author.username)
