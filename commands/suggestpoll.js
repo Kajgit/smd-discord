@@ -6,25 +6,39 @@ module.exports.run = async (bot, message, args) => {
     var idee = args.join(" ");
 
     // Kijk na als er een idee is meegegeven.
-    if (!idee) return message.channel.send("You did not provide a suggestion.");
+    if (!idee) return message.channel.send("Je hebt geen suggestie opgegeven.");
 
     // Maak het embed aan.
     var ideeEmbed = new discord.MessageEmbed()
-        .setTitle("**New suggestion**")
+        .setTitle("**Nieuwe Suggestie**")
         .setColor("#ff4530")
-        .addField("Suggestion:", idee)
-        .addField("Given by:", message.author)
-        .setFooter(`© Designity 2020`)
+        .addField("Suggestie:", idee)
+        .addField("Ingestuurd door:", message.author)
+        .setFooter(`© SmD 2020`)
 
     // Vind het kanaal.
-    var ideeChannel = message.guild.channels.cache.get(`767021782687023144`);
-    if (!ideeChannel) return message.guild.send("Cannot find channel for suggestions");
+    var ideeChannel = message.guild.channels.cache.get(`818609614353334323`);
+    if (!ideeChannel) return message.guild.send("Kan geen channel vinden voor suggesties");
 
     // Verzend het bericht en voeg er reacties aan toe.
-    ideeChannel.send(ideeEmbed).then(embedMessage => {
-        embedMessage.react('👍');
-        embedMessage.react('👎');
+    ideeChannel.send(ideeEmbed).then(async msg => {
+        var emoji = await promptMessage(msg, message.author, 30, ["👍", "👎"] );
+
+            if(emoji === "👍"){
+
+                msg.delete();
+
+                message.channel.send(ideeEmbed);
+
+            } else if(emoji === "👎"){
+
+                msg.delete();
+
+                return message.reply("Suggestie succesvol geweigerd!").then(m => m.delete(5000));
+
+            }
     });
+
 
     message.reply(`You successfully sent a suggestion! :white_check_mark:`);
 
