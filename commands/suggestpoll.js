@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
             return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
         };
 
-        ideeEmbed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+        ideeEmbed.awaitReactions(filter, { max: 1, time: 12000000, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
@@ -42,14 +42,14 @@ module.exports.run = async (bot, message, args) => {
 
 		if (reaction.emoji.name === '👍') {
 			pollChannel.send(pollEmbed);
-            pollEmbed.react('👍');
+            pollChannel.message.react('👍');
             pollEmbed.react('👎');
 		} else {
 			ideeChannel.send("Suggestie succesvol geweigerd.");
 		}
 	})
 	.catch(collected => {
-		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+		message.reply('Er is niet gereageerd op de suggestie.');
 	});
     });
 
