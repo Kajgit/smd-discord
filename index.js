@@ -26,11 +26,11 @@ bot.on("ready", async () => {
 });
 
 bot.on('guildMemberAdd', member => {
-  member.guild.channels.get('818696696648302683').send("Welcome"); 
+  message.guild.channels.cache.get(`818696696648302683`).send("Welcome", member); 
 });
 
 bot.on('guildMemberRemove', member => {
-  member.guild.channels.get('818696696648302683').send("Leave"); 
+  message.guild.channels.cache.get(`818696696648302683`).send("Leave", member); 
 });
 
 bot.on("message", async (message) => {
