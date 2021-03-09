@@ -26,7 +26,7 @@ bot.on("ready", async () => {
 });
 
 bot.on('guildMemberAdd', member => {
-  message.guild.channels.cache.get(`818696696648302683`).send("Welcome", member); 
+  console.log("Used joined")
 });
 
 bot.on('guildMemberRemove', member => {
