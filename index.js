@@ -25,14 +25,6 @@ bot.on("ready", async () => {
   bot.user.setActivity(`SmD`, { type: "WATCHING" });
 });
 
-bot.on('guildMemberAdd', member => {
-  console.log("Used joined")
-});
-
-bot.on('guildMemberRemove', member => {
-  message.guild.channels.cache.get(`818696696648302683`).send("Leave", member); 
-});
-
 bot.on("message", async (message) => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;

@@ -26,8 +26,8 @@ module.exports.run = async (bot, message, args) => {
     ideeChannel.send(ideeEmbed).then(ideeEmbed => {
         ideeEmbed.react('👍').then(() => ideeEmbed.react('👎'));
 
-        const filter = (reaction, user) => {
-            return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+        const filter = (reaction) => {
+            return ['👍', '👎'].includes(reaction.emoji.name);
         };
 
         ideeEmbed.awaitReactions(filter, { max: 1, time: 12000000, errors: ['time'] })
