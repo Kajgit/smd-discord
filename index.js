@@ -25,6 +25,14 @@ bot.on("ready", async () => {
   bot.user.setActivity(`SmD`, { type: "WATCHING" });
 });
 
+bot.on('guildMemberAdd', member => {
+  member.guild.channels.get('818696696648302683').send("Welcome"); 
+});
+
+bot.on('guildMemberRemove', member => {
+  member.guild.channels.get('818696696648302683').send("Leave"); 
+});
+
 bot.on("message", async (message) => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;

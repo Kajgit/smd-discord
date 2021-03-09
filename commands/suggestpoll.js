@@ -15,6 +15,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Suggestie:", idee)
         .addField("Ingestuurd door:", message.author)
         .setFooter(`© SmD 2020`)
+        .setTimestamp()
 
     // Vind het kanaal.
     var ideeChannel = message.guild.channels.cache.get(`818609614353334323`);
