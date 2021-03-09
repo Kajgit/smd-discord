@@ -18,11 +18,12 @@ module.exports.run = async (bot, message, args) => {
 
     // Vind het kanaal.
     var ideeChannel = message.guild.channels.cache.get(`818609614353334323`);
+    var pollChannel = message.guild.channels.cache.get(`818609616287301733`);
     if (!ideeChannel) return message.guild.send("Kan geen channel vinden voor suggesties");
 
     // Verzend het bericht en voeg er reacties aan toe.
     ideeChannel.send(ideeEmbed).then(ideeEmbed => {
-        ideeEmbed.react('👍').then(() => message.react('👎'));
+        ideeEmbed.react('👍').then(() => ideeEmbed.react('👎'));
 
         const filter = (reaction, user) => {
             return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
@@ -32,10 +33,17 @@ module.exports.run = async (bot, message, args) => {
 	.then(collected => {
 		const reaction = collected.first();
 
+        var pollEmbed = new discord.MessageEmbed()
+        .setTitle("**Nieuwe Poll**")
+        .setColor("#ff4530")
+        .addField("Poll:", idee)
+        .addField("Ingestuurd door:", message.author)
+        .setFooter(`© SmD 2020`)
+
 		if (reaction.emoji.name === '👍') {
-			message.reply('you reacted with a thumbs up.');
+			pollChannel.send(pollEmbed);
 		} else {
-			message.reply('you reacted with a thumbs down.');
+			message.channel.send("Suggestie succesvol geweigerd.");
 		}
 	})
 	.catch(collected => {
