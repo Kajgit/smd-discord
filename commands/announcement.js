@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
     var options = {
 
         titel: args[0] || "Mededeling",
-        bericht: args[1] || "- **StaffTeam SmD.**",
+        bericht: args[1] || "**SmD**",
         kleur: args[2].trim(),
         kanaal: args[3].trim()
 
@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
 
     
     var announcementMessage = new discord.MessageEmbed()
-        .setTitle("Mededeling:")
+        .setTitle("UPDATE")
         .setColor("#ba3030")
         .setDescription(`\n\n ${options.titel} \n\n ${options.bericht} \n`)
         .setTimestamp();
