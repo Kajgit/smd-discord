@@ -1,11 +1,11 @@
 const discord = require('discord.js')
 
 module.exports.run = async (bot, message, args, con) => {
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: You don't have permission to do this.")
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Je hebt hier geen permissies voor.")
 
     message.channel.overwritePermissions([
         {
-            id: '698622362559447221',
+            id: '807775107812032513',
             allow: ['SEND_MESSAGES']
         },
         {
@@ -16,9 +16,9 @@ module.exports.run = async (bot, message, args, con) => {
 
     let embed = new discord.MessageEmbed()
     .setTitle(` Channel unlocked`)
-    .setDescription(`This channel is unlocked, so you can speak aigan.`)
+    .setDescription(`Deze channel is geunlocked, dus je kunt weer praten.`)
     .setColor('RED')
-    .setFooter(`© Devisuality 2020`)
+    .setFooter(`© SmD 2020`)
 
     message.channel.send(embed)
 }
