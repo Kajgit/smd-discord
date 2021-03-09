@@ -42,15 +42,13 @@ module.exports.run = async (bot, message, args) => {
 
 		if (reaction.emoji.name === '👍') {
 			pollChannel.send(pollEmbed);
-            pollChannel.message.react('👍');
-            pollEmbed.react('👎');
+            pollEmbed.message.react('👍');
+            pollEmbed.message.react('👎');
 		} else {
 			ideeChannel.send("Suggestie succesvol geweigerd.");
 		}
 	})
-	.catch(collected => {
-		message.reply('Er is niet gereageerd op de suggestie.');
-	});
+
     });
 
     
