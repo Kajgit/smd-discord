@@ -41,9 +41,10 @@ module.exports.run = async (bot, message, args) => {
         .setFooter(`© SmD 2020`)
 
 		if (reaction.emoji.name === '👍') {
-			pollChannel.send(pollEmbed);
-            pollEmbed.message.react('👍');
-            pollEmbed.message.react('👎');
+            pollChannel.send(pollEmbed).then(embedMessage => {
+                embedMessage.react('👍');
+                embedMessage.react('👎');
+            });
 		} else {
 			ideeChannel.send("Suggestie succesvol geweigerd.");
 		}
