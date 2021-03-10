@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) => {
     var ideeEmbed = new discord.MessageEmbed()
         .setTitle("**Nieuwe Suggestie**")
         .setColor("#ff4530")
+        .setDescription("Klik op het duimpje omhoog om de suggestie goed te keuren.")
         .addField("Suggestie:", idee)
         .addField("Ingestuurd door:", message.author)
         .setFooter(`© SmD 2020`)
@@ -25,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
     ideeChannel.send(ideeEmbed).then(ideeEmbed => {
         ideeEmbed.react('👍').then(() => ideeEmbed.react('👎'));
 
-        var approveUser = '749317246114856960';
+        var approveUser = '365518388392624140';
 
         const filter = (reaction, user) => {
             return ['👍', '👎'].includes(reaction.emoji.name) && user.id === approveUser;
@@ -41,10 +42,9 @@ module.exports.run = async (bot, message, args) => {
         .addField("Poll:", idee)
         .addField("Ingestuurd door:", message.author)
         .setFooter(`© SmD 2020`)
-        var pollChannel =  message.guild.channels.cache.find(c => c.id === '817803531917590588');
+        var pollChannel =  message.guild.channels.cache.find(c => c.id === '819142218723229717');
 
 		if (reaction.emoji.name === '👍') {
-            console.log(pollChannel, pollEmbed);
             pollChannel.send(pollEmbed).then(embedMessage => {
                 embedMessage.react('👍');
                 embedMessage.react('👎');
