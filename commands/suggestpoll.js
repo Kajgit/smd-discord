@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
     ideeChannel.send(ideeEmbed).then(ideeEmbed => {
         ideeEmbed.react('👍').then(() => ideeEmbed.react('👎'));
 
-        var approveUser = '365518388392624140';
+        var approveUser = '359739239459586069';
 
         const filter = (reaction, user) => {
             return ['👍', '👎'].includes(reaction.emoji.name) && user.id === approveUser;
