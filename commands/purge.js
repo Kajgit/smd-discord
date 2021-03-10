@@ -24,6 +24,6 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
   cata: "staff",
-  name: "purge",
+  name: "clear",
   aliases: "koppel"
 }
