@@ -2,15 +2,15 @@ const discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
     
-        var videos = ['https://thumbs.gfycat.com/LeanGranularCur-max-1mb.gif', 'https://media.tenor.com/images/40f5c0e1efe84dc48facff2e437371ce/tenor.gif', 'https://thumbs.gfycat.com/ApprehensiveIlliterateCollie-max-1mb.gif', 'https://i.makeagif.com/media/1-17-2017/vlsztM.gif'];
-        var randomArgs = Math.floor(Math.random() * 4);
+        var videos = ['https://thumbs.gfycat.com/LeanGranularCur-max-1mb.gif', 'https://media.tenor.com/images/40f5c0e1efe84dc48facff2e437371ce/tenor.gif', 'https://thumbs.gfycat.com/ApprehensiveIlliterateCollie-max-1mb.gif', 'https://i.makeagif.com/media/1-17-2017/vlsztM.gif', 'https://data.whicdn.com/images/168089324/original.gif'];
+        var randomArgs = Math.floor(Math.random() * 5);
 
         console.log(randomArgs);
 
         if (randomArgs == '2') {
             let savedEmbed = new discord.MessageEmbed()
             .setColor('#1c1c1c')
-            .setImage(videos[2])
+            .setImage(videos[4])
             .addField(message.author.username, `werd gesaved van de zepreh!`)
             .setFooter(`© SmD 2020`)
             .setTimestamp()
