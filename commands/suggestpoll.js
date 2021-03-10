@@ -39,6 +39,7 @@ module.exports.run = async (bot, message, args) => {
         var pollEmbed = new discord.MessageEmbed()
         .setTitle("**Nieuwe Poll**")
         .setColor("#ff4530")
+        .setThumbnail("https://cdn.discordapp.com/attachments/454327349295579147/818594980204511253/3d-isometric-background-cube-landscape-260nw-1069121108.png")
         .addField("Poll:", idee)
         .addField("Ingestuurd door:", message.author)
         .setFooter(`© SmD 2020`)
