@@ -8,8 +8,8 @@ module.exports.run = async (bot, message, args) => {
         let embed = new discord.MessageEmbed()
         .setTitle('Gebruik van command')
         .setColor('#1c1c1c')
-        .setThumbnail(serverIcon)
-        .setDescription("http://assets.stickpng.com/thumbs/5a461418d099a2ad03f9c999.png")
+        .setThumbnail('http://assets.stickpng.com/thumbs/5a461418d099a2ad03f9c999.png')
+        .setDescription('!report [probleem-bug-klacht] [specifieke uitleg]')
         .setFooter(`© SmD 2020`)
         .setTimestamp()
 
