@@ -6,7 +6,9 @@ module.exports.run = async (bot, message, args) => {
                     'https://data.whicdn.com/images/168089324/original.gif'];
         var randomArgs = Math.floor(Math.random() * 4) + 1;
 
-        if (randomArgs == 4) {
+        console.log(randomArgs);
+
+        if (randomArgs == '4') {
             let savedEmbed = new discord.MessageEmbed()
             .setColor('#1c1c1c')
             .setImage(videos[4])
