@@ -2,8 +2,7 @@ const discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
     
-        var videos = ['https://thumbs.gfycat.com/LeanGranularCur-max-1mb.gif', 'https://media.tenor.com/images/40f5c0e1efe84dc48facff2e437371ce/tenor.gif', 'https://thumbs.gfycat.com/ApprehensiveIlliterateCollie-max-1mb.gif',
-                    'https://data.whicdn.com/images/168089324/original.gif'];
+        var videos = ['https://thumbs.gfycat.com/LeanGranularCur-max-1mb.gif', 'https://media.tenor.com/images/40f5c0e1efe84dc48facff2e437371ce/tenor.gif', 'https://thumbs.gfycat.com/ApprehensiveIlliterateCollie-max-1mb.gif', 'https://i.makeagif.com/media/1-17-2017/vlsztM.gif'];
         var randomArgs = Math.floor(Math.random() * 4) + 1;
 
         console.log(randomArgs);
