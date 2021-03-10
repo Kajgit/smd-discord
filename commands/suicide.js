@@ -8,10 +8,10 @@ module.exports.run = async (bot, message, args) => {
 
         console.log(randomArgs);
 
-        if (randomArgs == '4') {
+        if (randomArgs == '3') {
             let savedEmbed = new discord.MessageEmbed()
             .setColor('#1c1c1c')
-            .setImage(videos[4])
+            .setImage(videos[3])
             .addField(message.author.username, `got saved from doing the zepreh!`)
             .setFooter(`© SmD 2020`)
             .setTimestamp()
