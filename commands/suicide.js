@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         if (randomArgs == 4) {
             let savedEmbed = new discord.MessageEmbed()
             .setColor('#1c1c1c')
-            .setImage(video[4])
+            .setImage(videos[4])
             .addField(message.author.username, `got saved from doing the zepreh!`)
             .setFooter(`© SmD 2020`)
             .setTimestamp()
@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         } else {
             let embed = new discord.MessageEmbed()
             .setColor('#1c1c1c')
-            .setImage(video[randomArgs])
+            .setImage(videos[randomArgs])
             .addField(message.author.username, `deed zojuist de zepreh!`)
             .setFooter(`© SmD 2020`)
             .setTimestamp()
