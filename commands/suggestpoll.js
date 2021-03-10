@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Poll:", idee)
         .addField("Ingestuurd door:", message.author)
         .setFooter(`© SmD 2020`)
-        var pollChannel = message.guild.channels.cache.get('818609616287301733');
+        var pollChannel =  message.guild.channels.cache.find(c => c.id === '817803531917590588');
 
 		if (reaction.emoji.name === '👍') {
             console.log(pollChannel, pollEmbed);
