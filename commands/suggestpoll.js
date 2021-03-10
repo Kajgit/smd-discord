@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
     ideeChannel.send(ideeEmbed).then(ideeEmbed => {
         ideeEmbed.react('👍').then(() => ideeEmbed.react('👎'));
 
-        var approveUser = '359739239459586069';
+        var approveUser = '749317246114856960';
 
         const filter = (reaction, user) => {
             return ['👍', '👎'].includes(reaction.emoji.name) && user.id === approveUser;
@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Poll:", idee)
         .addField("Ingestuurd door:", message.author)
         .setFooter(`© SmD 2020`)
-        var pollChannel = message.guild.channels.cache.get(`818609616287301733`);
+        var pollChannel = message.guild.channels.cache.get('818609616287301733');
 
 		if (reaction.emoji.name === '👍') {
             console.log(pollChannel, pollEmbed);
