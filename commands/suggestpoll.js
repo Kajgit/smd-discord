@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
 
     // Vind het kanaal.
-    var ideeChannel = message.guild.channels.cache.get(`818609614353334323`);
+    var ideeChannel = message.guild.channels.cache.get(`818639596278513715`);
     var pollChannel = message.guild.channels.cache.get(`818609616287301733`);
     if (!ideeChannel) return message.guild.send("Kan geen channel vinden voor suggesties");
 

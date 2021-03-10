@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args, con) => {
 
     message.channel.overwritePermissions([
         {
-            id: '807775107812032513',
+            id: '819141658359627836',
             allow: ['SEND_MESSAGES']
         },
         {

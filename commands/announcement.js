@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp();
 
 
-    var announceChannel = message.guild.channels.cache.find(guild => guild.id === '818699128838160414');
+    var announceChannel = message.guild.channels.cache.find(guild => guild.id === '803418186656645130');
     if (!announceChannel) return message.channel.send("Channel niet gevonden.");
 
    

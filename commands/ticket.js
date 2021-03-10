@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     type: 'text', 
     permissionOverwrites: [
             {
-             id: "807775107812032513", 
+             id: "819141658359627836", 
             allow: ['VIEW_CHANNEL'],
             },
             {
@@ -30,11 +30,11 @@ module.exports.run = async (bot, message, args) => {
             ]
     })
            .then(channel => {
-            channel.setParent(`818627102084431873`)
+            channel.setParent(`819142038338666537`)
 
             channel.overwritePermissions([
                 {
-                    id: "807775107812032513", 
+                    id: "819141658359627836", 
                     allow: ['VIEW_CHANNEL'],
                     },
                     {
