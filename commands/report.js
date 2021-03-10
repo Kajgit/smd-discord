@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
 
 
-        let channel = message.guild.channels.cache.get("818609614353334323");
+        let channel = message.guild.channels.cache.get("818639534966964245");
 
         if (!channel) return message.channel.send(`Er is geen channel genaamd logs, kijk de config na`)
         channel.send(embed)
