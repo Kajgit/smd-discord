@@ -44,6 +44,7 @@ module.exports.run = async (bot, message, args) => {
         var pollChannel = message.guild.channels.cache.get(`818609616287301733`);
 
 		if (reaction.emoji.name === '👍') {
+            console.log(pollChannel, pollEmbed);
             pollChannel.send(pollEmbed).then(embedMessage => {
                 embedMessage.react('👍');
                 embedMessage.react('👎');
