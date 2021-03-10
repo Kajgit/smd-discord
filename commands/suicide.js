@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
             let savedEmbed = new discord.MessageEmbed()
             .setColor('#1c1c1c')
             .setImage(videos[3])
-            .addField(message.author.username, `got saved from doing the zepreh!`)
+            .addField(message.author.username, `werd gesaved van de zepreh!`)
             .setFooter(`© SmD 2020`)
             .setTimestamp()
 
