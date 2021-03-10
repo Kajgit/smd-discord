@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     
         var videos = ['https://thumbs.gfycat.com/LeanGranularCur-max-1mb.gif', 'https://media.tenor.com/images/40f5c0e1efe84dc48facff2e437371ce/tenor.gif', 'https://thumbs.gfycat.com/ApprehensiveIlliterateCollie-max-1mb.gif',
                     'https://data.whicdn.com/images/168089324/original.gif'];
-        var randomArgs = Math.floor(Math.random() * 6) + 1;
+        var randomArgs = Math.floor(Math.random() * 4) + 1;
 
         if (randomArgs == 4) {
             let savedEmbed = new discord.MessageEmbed()
