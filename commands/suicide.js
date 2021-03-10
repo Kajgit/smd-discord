@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 
         console.log(randomArgs);
 
-        if (randomArgs == '2') {
+        if (randomArgs == '4') {
             let savedEmbed = new discord.MessageEmbed()
             .setColor('#1c1c1c')
             .setImage(videos[4])
